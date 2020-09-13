@@ -11,7 +11,7 @@ namespace FreeCodeCamp.Controllers
     {
         [HttpPost]
         [DisableRequestSizeLimit]
-        public IActionResult GetMetadata([FromForm] IFormFile file)
+        public IActionResult GetMetadata(IFormFile file)
         {
             var metadata = new FileMetadataVM
             {
