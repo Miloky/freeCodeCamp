@@ -27,7 +27,7 @@ namespace FreeCodeCamp.FileMetadata.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<IActionResult> GetUser(int id)
+        public async Task<IActionResult> FindUser(int id)
         {
             var user = await _context.Users.FirstOrDefaultAsync(user => user.Id == id);
             if (user == null)
