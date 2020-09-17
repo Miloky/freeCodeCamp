@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { CssBaseline } from '@material-ui/core';
+import Routes from './pages';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CssBaseline/>
+    <Routes/>
   </React.StrictMode>,
   document.getElementById('root')
 );
