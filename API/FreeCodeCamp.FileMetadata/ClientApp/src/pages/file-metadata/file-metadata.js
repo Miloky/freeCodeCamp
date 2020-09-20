@@ -64,7 +64,6 @@ const FileMetadata = () => {
         // TODO: Change on snackbar
         return file;
       }
-
     }
   });
   useEffect(() => {
@@ -80,6 +79,10 @@ const FileMetadata = () => {
     // TODO: Change on snackbar
     if(size>50){
       alert('The files size are too big!');
+      return;
+    }
+    if(files.length === 0){
+      alert('Load files first!')
       return;
     }
     setOpen(true);
