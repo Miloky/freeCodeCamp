@@ -1,3 +1,4 @@
+using System.Linq;
 using FreeCodeCamp.FileMetadata.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,14 +12,10 @@ namespace FreeCodeCamp.Controllers
     {
         [HttpPost]
         [DisableRequestSizeLimit]
-        public IActionResult GetMetadata([FromForm] IFormFile file)
+        public IActionResult GetMetadata(IFormFileCollection files)
         {
-            var metadata = new FileMetadataVM
-            {
-                Name = file.FileName,
-                Type = file.ContentType,
-                Size = file.Length
-            };
+
+          var metadata =  files.Select(FileMetadataVM.Projection).ToList();
             return Ok(metadata);
         }
     }
