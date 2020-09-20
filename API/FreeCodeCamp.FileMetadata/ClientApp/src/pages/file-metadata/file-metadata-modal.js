@@ -45,7 +45,7 @@ const FileMetadataModal = ({onClose, files}) => {
     const subscription = fileMetadataService
       .fetchAsync(files)
       .subscribe({
-        result: result => {
+        next: result => {
           setMetadata(result);
           setLoading(false);
         },
