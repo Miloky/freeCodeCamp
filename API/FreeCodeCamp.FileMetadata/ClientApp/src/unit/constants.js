@@ -20,10 +20,9 @@ export const getExtension = name => {
   return name.slice(((name.lastIndexOf('.') - 1) >>> 0) + 2).trim();
 };
 
-// TODO: Fix wrong calculation
 export const bytesToMb = bytes =>{
   if(!bytes) return 0;
-  return  Math.floor(bytes/Math.pow(1000, 2));
+  return  bytes/Math.pow(1000, 2);
 }
 
 export const readFileAsBase64Async = file => {
